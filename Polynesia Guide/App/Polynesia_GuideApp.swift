@@ -11,7 +11,7 @@ import SwiftUI
 struct Polynesia_GuideApp: App {
     var body: some Scene {
         WindowGroup {
-            OnboardingView()
+            AppRootView()
         }
     }
 }
