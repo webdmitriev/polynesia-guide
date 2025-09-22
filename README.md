@@ -19,7 +19,7 @@
 ## 📸 Скриншоты
 | Onboarding |
 |--------------|
-| ![Onboarding](https://api.webdmitriev.com/wp-content/uploads/2025/09/dream-place-uikit-01-scaled.jpg) |
+| ![Onboarding](https://api.webdmitriev.com/wp-content/uploads/2025/09/polynesia-onboadring-01-scaled.jpg) |
 
 
 ## ⚙️ Установка
