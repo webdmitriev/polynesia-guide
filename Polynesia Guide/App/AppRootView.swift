@@ -13,7 +13,7 @@ enum AppScreen {
 }
 
 struct AppRootView: View {
-    @State var currentScreen: AppScreen = .onboarding
+    @State var currentScreen: AppScreen = .map
     
     var body: some View {
         Group {
