@@ -24,9 +24,8 @@ final class MapViewModel: ObservableObject {
     ]
     
     let islandCenter = CLLocationCoordinate2D(latitude: -16.50013, longitude: -151.73756)
-    let boundingRadius: CLLocationDistance = 7000
+    let boundingRadius: CLLocationDistance = 12000
     
-
     init() {
         let camera = MapCamera(centerCoordinate: islandCenter, distance: 7000 * 2)
         cameraPosition = .camera(camera)

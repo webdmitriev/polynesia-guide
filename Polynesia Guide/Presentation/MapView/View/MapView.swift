@@ -41,12 +41,6 @@ struct MapView: View {
         }
         .sheet(item: $viewModel.selectedPoint) { point in
             VStack(spacing: 16) {
-                // Полоска-индикатор
-                RoundedRectangle(cornerRadius: 3)
-                    .fill(Color.secondary.opacity(0.5))
-                    .frame(width: 40, height: 5)
-                    .padding(.top, 8)
-                
                 Text(point.title)
                     .font(.title)
                     .bold()
@@ -68,8 +62,8 @@ struct MapView: View {
                 Spacer()
             }
             .padding()
-            .presentationDetents([.medium, .large]) // чтобы выглядело как нативный sheet
-            .presentationDragIndicator(.hidden) // отключаем системный, оставляем свой
+            .presentationDetents([.medium, .large])
+            .presentationDragIndicator(.visible)
         }
     }
 }
