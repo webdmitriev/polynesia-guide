@@ -9,6 +9,7 @@ import SwiftUI
 
 enum AppScreen {
     case onboarding
+    case map
 }
 
 struct AppRootView: View {
@@ -22,7 +23,17 @@ struct AppRootView: View {
                 let repo = FetchOnboardingRepositoryImp(dataSource: dataSource)
                 let useCase = FetchOnboardingUseCaseImpl(repository: repo)
                 
-                OnboardingView(viewModel: OnboardingViewModel(fetchOnboardingUseCase: useCase))
+                OnboardingView(
+                    viewModel: OnboardingViewModel(fetchOnboardingUseCase: useCase),
+                    onSkip: {
+                        withAnimation {
+                            self.currentScreen = .map
+                        }
+                    }
+                )
+
+            case .map:
+                MapView()
             }
         }
     }

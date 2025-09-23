@@ -20,8 +20,11 @@ struct OnboardingView: View {
     let circleWidth: CGFloat = 52
     let padding: CGFloat = 2
     
-    init(viewModel: OnboardingViewModel) {
+    var onSkip: () -> Void
+    
+    init(viewModel: OnboardingViewModel, onSkip: @escaping () -> Void) {
         _viewModel = StateObject(wrappedValue: viewModel)
+        self.onSkip = onSkip
     }
     
     var body: some View {
@@ -134,12 +137,8 @@ struct OnboardingView: View {
     }
     
     func onReachEnd() {
-        print("✅ Успех! Переходим дальше...")
-        
-        // Через 1 секунду автоматический переход
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            print("🏁 Выполняем переход на новый View")
-            // transitionToNextView()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+            onSkip()
         }
     }
     
